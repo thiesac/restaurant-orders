@@ -39,3 +39,16 @@ class Dish:
 
     def get_ingredients(self):
         return set(self.recipe.keys())
+
+
+cheese = Ingredient("bacon")
+tomato = Ingredient("tomato")
+pizza = Dish("Pizza", 12.99)
+
+pizza.add_ingredient_dependency(cheese, 1)
+pizza.add_ingredient_dependency(tomato, 2)
+
+
+print(pizza)
+print(pizza.get_ingredients())
+print(pizza.get_restrictions())
