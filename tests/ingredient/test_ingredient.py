@@ -25,3 +25,7 @@ def test_ingredient():
     actual_restrictions_bacon = {str(r) for r in bacon.restrictions}
     assert bacon.name == "bacon"
     assert actual_restrictions_bacon == bacon_expected_restrictions
+
+    butter1 = Ingredient("manteiga")
+    butter2 = Ingredient("manteiga")
+    assert hash(butter1) == hash(butter2)
