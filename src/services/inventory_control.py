@@ -33,4 +33,5 @@ class InventoryMapping:
     def consume_recipe(self, recipe: Recipe) -> None:
         pass
 
+
 # iniciando projeto
