@@ -63,7 +63,7 @@ class Ingredient:
         return f"Ingredient('{self.name}')"
 
 
-queijo_mussarela = Ingredient("bacon")
+queijo_mussarela = Ingredient("salmão")
 print(queijo_mussarela)
 print(queijo_mussarela.name)
 print(queijo_mussarela.restrictions)

@@ -30,3 +30,7 @@ def test_ingredient():
     butter2 = Ingredient("manteiga")
     assert hash(butter1) == hash(butter2)
     assert hash(butter1) != hash(cheese)
+
+    salmon1 = Ingredient("salmão")
+    salmon2 = Ingredient("salmão")
+    assert salmon1 == salmon2
