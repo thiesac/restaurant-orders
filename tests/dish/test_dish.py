@@ -13,6 +13,12 @@ def test_dish():
     assert hash(pasta1) == hash(pasta2)
     assert hash(pasta1) != hash(dish_pizza)
 
+    lasagna1 = Dish("Lasanha", 21.00)
+    lasagna1.add_ingredient_dependency("queijo mussarela", 200)
+    lasagna2 = Dish("Lasanha", 21.00)
+    lasagna2.add_ingredient_dependency("queijo mussarela", 200)
+    assert lasagna1 == lasagna2
+
     with pytest.raises(ValueError) as exc_info:
         Dish("Salmão Grelhado", -1)
     assert str(exc_info.value) == "Dish price must be greater then zero."
