@@ -18,6 +18,8 @@ def test_dish():
     lasagna2 = Dish("Lasanha", 21.00)
     lasagna2.add_ingredient_dependency("queijo mussarela", 200)
     assert lasagna1 == lasagna2
+    expected_repr = "Dish('Lasanha', R$21.00)"
+    assert repr(lasagna1) == expected_repr
 
     with pytest.raises(ValueError) as exc_info:
         Dish("Salmão Grelhado", -1)
