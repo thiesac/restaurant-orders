@@ -11,6 +11,7 @@ def test_dish():
     pasta1 = Dish("Macarronada", 33.50)
     pasta2 = Dish("Macarronada", 33.50)
     assert hash(pasta1) == hash(pasta2)
+    assert hash(pasta1) != hash(dish_pizza)
 
     with pytest.raises(ValueError) as exc_info:
         Dish("Salmão Grelhado", -1)
