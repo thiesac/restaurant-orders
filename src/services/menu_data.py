@@ -5,7 +5,7 @@ import csv
 class MenuData:
     def __init__(self, source_path: str) -> None:
         self.source_path = source_path
-        self.set = [False]
+        self.dishes = set()
 
     def read_csv_rows(self):
         with open(self.source_path, newline="") as csvfile:
