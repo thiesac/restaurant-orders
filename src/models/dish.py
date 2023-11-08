@@ -41,15 +41,15 @@ class Dish:
         return set(self.recipe.keys())
 
 
-cheese = Ingredient("bacon")
-tomato = Ingredient("tomato")
-pizza = Dish("Pizza", -1)
+# cheese = Ingredient("bacon")
+# tomato = Ingredient("tomato")
+# pizza = Dish("Pizza", "20")
 
-pizza.add_ingredient_dependency(cheese, 1)
-pizza.add_ingredient_dependency(tomato, 2)
+# pizza.add_ingredient_dependency(cheese, 1)
+# pizza.add_ingredient_dependency(tomato, 2)
 
 
-print(pizza)
-print(pizza.get_ingredients())
-print(pizza.get_restrictions())
+# print(pizza)
+# print(pizza.get_ingredients())
+# print(pizza.get_restrictions())
 # python3 -m src.models.dish

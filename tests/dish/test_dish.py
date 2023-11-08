@@ -11,3 +11,7 @@ def test_dish():
     with pytest.raises(ValueError) as exc_info:
         Dish("Salmão Grelhado", -1)
     assert str(exc_info.value) == "Dish price must be greater then zero."
+
+    with pytest.raises(TypeError) as exc_info:
+        Dish("Lasanha", "52")
+    assert str(exc_info.value) == "Dish price must be float."
