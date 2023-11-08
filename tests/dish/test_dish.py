@@ -1,5 +1,4 @@
-from src.models.dish import Dish
-from src.models.ingredient import Restriction  # noqa: F401, E261, E501
+from src.models.dish import Dish  # noqa: F401, E261, E501
 import pytest
 
 
@@ -31,6 +30,18 @@ def test_dish():
     ingredients = lasagna1.get_ingredients()
     assert "massa de lasanha" in ingredients
     assert "queijo mussarela" in ingredients
+
+    # restrictions = lasagna1.get_restrictions()
+    # lasagna_expected_restrictions = {
+    #     str(restrictions.LACTOSE),
+    #     str(restrictions.GLUTEN),
+    #     str(restrictions.ANIMAL_DERIVED),
+    # }
+    # actual_restrictions_lasagna = {str(r) for r in restrictions}
+    # assert lasagna_expected_restrictions == actual_restrictions_lasagna
+    # assert "LACTOSE" in restrictions
+    # assert "GLUTEN" in restrictions
+    # assert "ANIMAL_DERIVED" in restrictions
 
     with pytest.raises(ValueError) as exc_info:
         Dish("Salmão Grelhado", -1)

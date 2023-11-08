@@ -39,17 +39,3 @@ class Dish:
 
     def get_ingredients(self):
         return set(self.recipe.keys())
-
-
-cheese = Ingredient("queijo mussarela")
-tomato = Ingredient("massa de lasanha")
-pizza = Dish("Pizza", 20)
-
-pizza.add_ingredient_dependency(cheese, 200)
-pizza.add_ingredient_dependency(tomato, 300)
-
-
-# # print(pizza)
-print(pizza.get_ingredients())
-# print(pizza.get_restrictions())
-# # python3 -m src.models.dish
