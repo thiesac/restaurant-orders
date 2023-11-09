@@ -16,7 +16,7 @@ class MenuData:
         self._read_csv()
 
     # Private method to read the CSV file
-    def _read_csv(self):
+    def _read_csv(self) -> None:
         with open(self.source_path, newline="") as csvfile:
             # Use csv.DictReader to read the rows as dictionaries
             reader = csv.DictReader(csvfile)
@@ -45,13 +45,15 @@ class MenuData:
                 dish.add_ingredient_dependency(ingredient, recipe_amount)
 
     # Private method to extract dish information from a row
-    def _extract_dish_info(self, row, dishes_map):
+    def _extract_dish_info(
+        self, row: Dict, dishes_map: Dict[str, Dish]
+    ) -> tuple:
         dish_name = row["dish"]
         price = float(row["price"])
         return dish_name, price
 
     # Private method to extract ingredient information from a row
-    def _extract_ingredient_info(self, row):
+    def _extract_ingredient_info(self, row: Dict) -> tuple:
         ingredient_name = row["ingredient"]
         recipe_amount = float(row["recipe_amount"])
         return ingredient_name, recipe_amount
